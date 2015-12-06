@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>UFlix | Find your favorite Movies and Shows</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="../static/css/search-style.css">
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="../static/js/player.min.js"></script>
+</head>
+
+
+<body>
+  <nav class="navbar navbar-default _nav">
+  <div class="container-fluid">
+
+  <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" id="nav_debug" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="col-xs-2 col-sm-4">
+          <a class="navbar-brand" id="nav_debug1" href="/">UFlix</a>
+        </div>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse col-xs-pull-6 col-sm-pull-6" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a id="nav_debug" href="../#about">ABOUT</a></li>
+          <li><a id="nav_debug" href="../#credits">CREDITS</a></li>
+        </ul>
+      </div>  
+  </div>
+</nav> 
+
+  <div class="container-fluid search">
+  <div class="row">
+      <div class="col-md-8 movie-search">
+          <div id="custom-search-input">
+              <div class="input-group col-md-12">
+                  <form action="/search/">
+                  <input autofocus type="text" name="q" class="form-control input-lg" placeholder="Search for movies or shows..." method="POST"/>
+
+                  <input type="submit" style="display:none"/>
+                  </form>
+                  <span class="input-group-btn">
+                      <button class="btn btn-info btn-lg" type="button">
+                          <i class="glyphicon glyphicon-search"></i>
+                      </button>
+                  </span>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+      {% block content %}
+      {% endblock %}
+
+
+<footer>
+    <ul>
+      <li><a href="https://plus.google.com/+kirkbrunson"><i class="fa fa-google-plus fa-lg"></a></i></li>
+      <li><a href="https://www.twitter.com/kirkbrunson"><i class="fa fa-twitter fa-lg"></a></i></li>
+      <li><a href="https://github.com/kirkbrunson"><i class="fa fa-github fa-lg"></a></i></li>
+    </ul>
+<h5>&copy; Copyright Kirk Brunson 2015. All rights reserved</h5>
+</footer>
+
+<script type="text/javascript">
+  $(function () {
+    $(".youtube").YouTubeModal({autoplay:0, width:640, height:480});
+  });
+</script>
+
+</body>
+</html>
+

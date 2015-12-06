@@ -1,0 +1,285 @@
+/*
+Color Palate
+#A8383B
+#6e6e6e
+#A8383B
+#d9d9d9
+#f6f6f6
+*/
+
+
+/*Universal styles*/
+body {
+  background: #f8f8f8;
+  font-family: "Open Sans";
+}
+
+/* Style from baseline */
+
+#trailer .modal-dialog {
+  margin-top: 200px;
+  padding-top: 5%;
+  width: 60%;
+  height: auto;
+}
+.movie-info {
+  padding-top: 2%;
+}
+.hanging-close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  z-index: 9001;
+}
+#trailer-video {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-tile:hover {
+  background-color: #EEE;
+  cursor: pointer;
+}
+.scale-media {
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.scale-media iframe {
+  border: none;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: white;
+}
+
+
+
+._nav {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+#nav_debug {
+  color: #A8383B !important;
+}
+
+.navbar-brand {
+  margin-left: 5%;
+  font-size: 2.75em;
+  font-weight: bold;
+  color: #A8383B !important
+}
+
+.navbar-right {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+._nav {
+  padding: 20px 0px;
+  margin: 0% 5%;
+}
+
+.movie-search {
+  margin-top: 3%;
+  margin-bottom: 2%;
+  margin-left: 15%;
+  margin-right: 15%;          
+  border-color: #A8383B;
+  color: #A8383B;
+  background: transparent;
+}
+
+.navbar-header  a {
+  color: #A8383B !important;
+}
+#nav_debug {
+  color: #A8383B !important;
+}
+#nav_debug:hover {
+  background: #efefef;
+}
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 2px #A8383B;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #A8383B;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: transparent;;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #fff;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+    color: #A8383B;
+}
+
+input[placeholder] { 
+  color: #A8383B; 
+  font-size: 2em;
+}
+
+/* all */
+input[placeholder]::-webkit-input-placeholder { color:#3f3f3f; }
+input[placeholder]::-moz-placeholder { color:#3f3f3f; } /* firefox 19+ */
+input[placeholder]:-ms-input-placeholder { color:#3f3f3f; } /* ie */
+input[placeholder]input:-moz-placeholder { color:#3f3f3f; }
+
+input[placeholder]::selection {
+  background: rgba(168, 56, 59, 0.9); /* WebKit/Blink Browsers */
+  color: #fff;
+}
+
+input[placeholder]::-moz-selection {
+  background: rgba(168, 56, 59, 0.9); /* Gecko Browsers */
+  color: #fff;
+}
+
+
+/* Result Styles */
+
+.results {
+  background-color: #f6f6f6;
+  margin-top: 2%;
+  height: 100vh; 
+}
+
+.search-card {
+  margin: 2%;
+  padding: 2%;
+  display: block;
+  border: 1px solid #d9d9d9;
+  box-shadow: 2px;
+  background: #fff;
+}
+
+.search-card:nth-child(3n+1) { 
+  clear: both;
+  margin-left: 8%;
+}
+
+@media screen and (max-width: 995px) {
+  .search-card:nth-child(3n+1) { 
+    margin-left: 2%;
+  }
+  .search-card {
+    margin: 2%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 995px) {
+  .search-card:nth-child(2n+1) { 
+    margin-left: 6.5%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  input[placeholder] {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  input[placeholder] {
+    font-size: 1em;
+  }
+}
+
+.search-card img {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 2%;
+  height: auto;
+}
+
+.search-card h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.search-card p {
+  text-align: center;
+}
+
+.search-card ul {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  text-align: center;
+  margin-left: -9%;
+}
+
+.search-card ul > li {
+  list-style: none;
+  display: inline-block;
+  padding: 1% 2%;
+  font-size: 1.5em;
+  color: #A8383B;
+}
+
+.search-card:hover {
+  cursor: pointer;
+}
+
+.null-search > .row {
+  margin-left: 20%;
+  margin-right: 15%;
+  padding-top: 5%;
+}
+
+.null-search h1 {
+  padding: 7% 0%;
+  text-align: center;
+  font-weight: bold;
+  color: #A8383B;
+}
+
+
+/* Footer styles*/
+footer {
+  height: 5%;
+  background: #292929;
+  color: #6e6e6e;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+  clear: both;
+}
+
+footer ul {
+  padding: 0.25%;
+  padding-bottom: 0.1%
+}
+
+footer li {
+  display: inline;
+  padding-right: 2%;
+}
+
+footer a {
+  color: #6e6e6e
+}
+
+footer a:hover {
+  color: #A8383B
+}

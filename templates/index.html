@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>UFlix | Find your favorite Movies and Shows</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+  <nav class="navbar navbar-default _nav">
+  <div class="container-fluid">
+
+  <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" id="nav_debug" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="col-xs-2 col-sm-4">
+          <a class="navbar-brand" id="nav_debug1" href="/">UFlix</a>
+        </div>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse col-xs-pull-6 col-sm-pull-6" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a id="nav_debug" href="/#about">ABOUT</a></li>
+          <li><a id="nav_debug" href="/#credits">CREDITS</a></li>
+        </ul>
+      </div>  
+  </div>
+</nav>    
+
+
+  <div class="container-fluid splash">
+  <div class="row">
+      <div class="col-md-8 movie-search">
+      <!-- <h2>Search header here</h2> -->
+          <div id="custom-search-input">
+              <div class="input-group col-md-12">  
+                  <form action="/search/">
+                  <input type="text" name="q" class="form-control input-lg" placeholder="Search for movies or shows..." action="/q" method="POST"/>
+                  <input type="submit" style="display:none"/>
+                  </form>
+                  <span class="input-group-btn">
+                      <button class="btn btn-info btn-lg" type="button">
+                          <i class="glyphicon glyphicon-search"></i>
+                      </button>
+                  </span>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="container-fluid about" id="about">
+    <div class="row">
+    <div class="col-lg-2 col-md-2"></div>
+      <div class="col-lg-5  col-md-5 about-left">
+        <img src="../static/img/uf.png" alt="">
+      </div>
+      <div class="col-lg-3 col-md-3 about-description">
+        <h2>UFlix</h2>
+        <hr>
+        <p>UFlix is your one stop shop for finding entertainment that you love. Explore all the best movies and shows with our search engine.</p>
+        <p id="about-more">(No seriously.... We have an army of elves working around the clock to curate only the best in entertainment. Use our search technology today!)</p>
+        <a href="search"><button class="btn btn-custom">Search Now</button></a>
+      </div>
+      <div class="col-lg-2 col-md-2"></div>
+    </div>
+  </div>
+
+  <div class="container-fluid credits" id="credits">
+    <div class="row">
+    <div class="col-lg-1 col-md-1"></div>
+      <div class="col-lg-4 col-md-4 profile-card">
+        <img src="../static/img/profile.jpg" alt="">
+        <h3 class="title">Kirk Brunson</h3>
+        <p class="description">Kirk is a developer based in Boston, Massachusetts. When not programming he can be found traveling and enjoying music. Also, coffee is life.</p>
+        <ul>
+          <li><a href="https://plus.google.com/+kirkbrunson"><i class="fa fa-google-plus fa-lg"></a></i></li>
+          <li><a href="https://www.twitter.com/kirkbrunson"><i class="fa fa-twitter fa-lg"></a></i></li>
+          <li><a href="https://github.com/kirkbrunson"><i class="fa fa-github fa-lg"></i></a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4  col-md-4 profile-card">
+        <h3>CREDITS</h3>
+        <hr>
+        <p>UFlix was created as part of Udacity's FullStack NanoDegree program. It is meant to be a loose copy of Netflix and is not commercial in any way.</p>
+        <p>The technologies I used for this project are listed below.</p>
+        <br>
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <td>Flask</td>
+              <td>Python Micro Framework</td>
+            </tr>
+            <tr>
+              <td>Bootstrap</td>
+              <td>Frontend Framework</td>
+            </tr>
+            <tr>
+              <td>TMDb</td>
+              <td>Movie API</td>
+            </tr>
+            <tr>
+              <td>Abhinay Rathmore</td>
+              <td>YouTube Player</td>
+            </tr>
+            <tr>
+              <td>Plexels/ Netflix</td>
+              <td>Stock Images</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <p style="text-align:center">Made with &#x2764 in Boston</p>
+
+      </div>  
+      <div class="col-lg-1 col-md-1"></div>
+    </div>
+  </div>
+
+
+  <footer>
+    <ul>
+      <li><a href="https://plus.google.com/+kirkbrunson"><i class="fa fa-google-plus fa-lg"></a></i></li>
+      <li><a href="https://www.twitter.com/kirkbrunson"><i class="fa fa-twitter fa-lg"></a></i></li>
+      <li><a href="https://github.com/kirkbrunson"><i class="fa fa-github fa-lg"></a></i></li>
+    </ul>
+  <h5>&copy; Copyright Kirk Brunson 2015. All rights reserved</h5>
+  </footer>
+</body>
+</html>

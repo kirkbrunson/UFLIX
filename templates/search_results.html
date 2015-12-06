@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- return search cards here -->
+<div class="container-fluid results">
+    
+<!-- return results here -->
+
+{% for i in results %}
+  {% if i.youtube_trailers != [] %}  <!-- Need to move filtering to backend-->
+    {% if i.poster != None %}
+      {% if i.runtime != 0 %}
+
+      <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12 search-card">
+        <span yt-url="{{ i.youtube_trailers[0].geturl() }}" class="youtube">
+          <img src="{{ i.poster.geturl('w342') }}" alt="{{ i.title }}">
+          <h3 class="title">{{ i.title }}</h3>
+          <p class="description">{{ i.overview}}</p>
+          <ul>
+          
+            <!-- For loops to print genres, runtime and first 3 actors. -->
+            <h5> 
+              {% for j in i.genres %}
+                {{ j.name }}
+                {{ ',' }}
+              {% endfor %}
+              | {{ i.runtime }} min</h5> 
+            
+            <h5>Starring:  
+              {% for j in i.cast %}
+                {% if j.order < 4 %}
+                  {{ j.name }}
+                {% endif %}
+                {% if j.order < 3 %}
+                  {{ ',' }}
+                {% endif %}
+              {% endfor %}
+            </h5>
+          </ul>
+        </span>
+      </div>
+
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+</div>    <!-- end results -->
+
+{% endblock %}
