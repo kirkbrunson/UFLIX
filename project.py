@@ -7,38 +7,51 @@ app = Flask(__name__)
 # Set api key for TMDb
 set_key('TMDB_API_KEY')
 
-
-# Route for home page 
+# Home page 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template('index.html')
 
 
-# Route for search & results
+# Search & results
 @app.route('/search/', methods=['GET', 'POST'])
 def search():
-    # Get user's query from the url
+    # Get query from url
     query = request.query_string[2:]
 
     if query != '':
-        # Pass query to api and render results in template. If no res then show error template
-        while True:
-            try:
-                results = searchMovie(query)
-                print results[0]            # this way to test is annoying... should be more elegant
-                return render_template('search_results.html', results=results)
-                break
+        try:
+            # TODO: Catch IO_err
+            res = searchMovie(query)
+            movies = []
+            
+            # Filter results
+            for i in res:
+                try:
+                    i.img = i.poster.geturl('w342')
 
-            except:
-                return render_template('search_error.html')
+                    # If YT Trailer, keep the movie
+                    if i.youtube_trailers[0] != None:
+                        i.trailer = i.youtube_trailers[0].geturl()
+                        movies.append(i)
 
-    # Handle w. search w. blank query
+                        # TODO: Format cast & gernre strings
+                except:
+                    pass
+
+            return render_template('search_results.html', results=movies)
+        
+        # Catch all other errors
+        except:
+            return render_template('search_error.html')
+
+    # Handle blank query
     elif query == '':
         return render_template('search_blank.html')
-    
+
     else:
         return render_template('search_error.html')
-    
+
 
 if __name__ == '__main__':
     app.debug = True

@@ -7,13 +7,9 @@
 <!-- return results here -->
 
 {% for i in results %}
-  {% if i.youtube_trailers != [] %}  <!-- Need to move filtering to backend-->
-    {% if i.poster != None %}
-      {% if i.runtime != 0 %}
-
       <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12 search-card">
-        <span yt-url="{{ i.youtube_trailers[0].geturl() }}" class="youtube">
-          <img src="{{ i.poster.geturl('w342') }}" alt="{{ i.title }}">
+        <span yt-url="{{ i.trailer }}" class="youtube">
+          <img src="{{ i.img }}" alt="{{ i.title }}">
           <h3 class="title">{{ i.title }}</h3>
           <p class="description">{{ i.overview}}</p>
           <ul>
@@ -40,9 +36,7 @@
         </span>
       </div>
 
-      {% endif %}
-    {% endif %}
-  {% endif %}
+
 {% endfor %}
 
 </div>    <!-- end results -->
