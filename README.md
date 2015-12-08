@@ -8,6 +8,8 @@ From within a vagrant machine configured for Udacity's OAuth class
 - Run python project.py
 - Navigate to 127.0.0.1:5000
 
+**Note:** To use the TMDB API, you must generate an api key, which can be done [here](https://www.themoviedb.org/documentation/api). Place your key on line 8 of `project.py` [here](https://github.com/kirkbrunson/UFLIX/blob/master/project.py#L8).
+
 
 ### Credits:
 - [Themoviedb.org api](https://www.themoviedb.org/documentation/api)
